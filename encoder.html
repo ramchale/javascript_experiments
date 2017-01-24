@@ -1,0 +1,33 @@
+<html>
+  <body>
+    <input type="text" id="words">
+    <br></br>
+    <label>Superscript</label>
+    <input type="text" id="superscript">
+    <br></br>
+    <label>Subscript</label>
+    <input type="text" id="subscript">
+
+    <script>
+      window.onload = function() {
+        var e = document.getElementById('words');
+        e.oninput = myHandler;
+        e.onpropertychange = e.oninput; // for IE8
+      }
+
+      function myHandler() {
+        var words = document.getElementById('words');
+        var superscript = document.getElementById('superscript');
+        var subscript = document.getElementById('subscript');
+
+        superscript.value = '';
+        subscript.value = '';
+
+        for (var i = 0, len = words.value.length; i < len; i++) {
+          superscript.value += '\(^' + words.value[i] + '\)';
+          subscript.value += '\(_' + words.value[i] + '\)';
+        }
+      }
+    </script>
+  </body>
+</html>
