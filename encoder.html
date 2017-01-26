@@ -24,8 +24,8 @@
         subscript.value = '';
 
         for (var i = 0, len = words.value.length; i < len; i++) {
-          superscript.value += '\(^' + words.value[i] + '\)';
-          subscript.value += '\(_' + words.value[i] + '\)';
+          superscript.value += '\\(^' + words.value[i] + '\\)';
+          subscript.value += '\\(_' + words.value[i] + '\\)';
         }
       }
     </script>
